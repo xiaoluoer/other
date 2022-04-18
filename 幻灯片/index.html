@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纯js实现淘宝轮播图效果</title>
+    <script src="js/animate.js"></script>
+    <script src="js/banner.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            position: relative;
+            overflow: hidden;
+            margin: 90px auto;
+            width: 520px;
+            height: 280px;
+            background-color: aqua;
+            border-radius: 12px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .banner ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .banner ul li {
+            float: left;
+        }
+
+        .banner ul li a img {
+            display: block;
+            width: 520px;
+            height: 280px;
+        }
+
+        .banner .prev,
+        .banner .next {
+            display: none;
+            z-index: 2;
+            position: absolute;
+            width: 50px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 17.5px;
+            top: 50%;
+            background-color: rgba(0, 0, 0, .2);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .banner .prev {
+            left: 0;
+            transform: translate(-50%, -50%);
+            text-indent: 28px;
+        }
+
+        .banner .next {
+            right: 0;
+            transform: translate(50%, -50%);
+            text-indent: 8px;
+        }
+
+        .banner .prev:hover,
+        .banner .next:hover {
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .banner .gd {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            margin-left: -36.5px;
+            display: flex;
+            justify-content: space-around;
+            width: 75px;
+            height: 15px;
+            border-radius: 8px;
+            background-color: #ffffff4d;
+        }
+
+        .banner .gd i {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 2.5px;
+            background-color: azure;
+        }
+
+        .current {
+            background-color: #ff5000 !important;
+            width: 15px !important;
+            height: 9px !important;
+            border-radius: 4.5px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="prev">&lt;</div>
+        <div class="next">&gt;</div>
+        <ul>
+            <li><a href="javacsript:;"><img src="img/t1.png" alt=""></a></li>
+            <li><a href="javacsript:;"><img src="img/t2.png" alt=""></a></li>
+            <li><a href="javacsript:;"><img src="img/t3.png" alt=""></a></li>
+            <li><a href="javacsript:;"><img src="img/t4.png" alt=""></a></li>
+        </ul>
+        <div class="gd">
+        </div>
+    </div>
+</body>
+
+</html>
